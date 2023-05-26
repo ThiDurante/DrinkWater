@@ -19,6 +19,13 @@ function resetTimer() {
 }
 
 function startTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+  let minutesOrSeconds = document.getElementById('unit').value;
+  if (minutesOrSeconds === 'minutes') {
+    timerValue *= 60;
+  }
   timerInterval = setInterval(function () {
     let minutes = Math.floor(timerValue / 60);
     let seconds = timerValue % 60;
@@ -32,7 +39,7 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(timerInterval);
-  timerDisplay.innerHTML = `${timerValue}:00`;
+  timerValue = 0;
 }
 
 document.getElementById('start').addEventListener('click', function () {
@@ -45,5 +52,4 @@ document.getElementById('stop').addEventListener('click', function () {
 
 document.getElementById('time-input').addEventListener('change', function () {
   timerValue = this.value;
-  timerDisplay.innerHTML = `${timerValue}:00`;
 });

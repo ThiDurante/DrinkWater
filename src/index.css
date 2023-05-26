@@ -28,3 +28,16 @@ body {
   border: none;
   margin-bottom: 5px;
 }
+
+.time-unit {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.time-input {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}

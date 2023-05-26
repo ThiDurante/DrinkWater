@@ -8,7 +8,6 @@
       href="index.css"
     />
   </head>
-  <body>
     <div class="timer">00:00</div>
     <div>
       <button
@@ -26,12 +25,18 @@
         Stop
       </button>
     </div>
-    <input
-      type="text"
-      class="time-input"
-      placeholder="time in minutes"
-      id="time-input"
-    />
+    <div class='time-unit'>
+      <input
+        type="text"
+        class="time-input"
+        placeholder="Please insert time"
+        id="time-input"
+      />
+      <select name="units" id="unit">
+        <option value="minutes">Minutes</option>
+        <option value="seconds">Seconds</option>
+      </select>
+    </div>
     <script
       defer
       src="render.js"
