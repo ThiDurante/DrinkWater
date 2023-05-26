@@ -3,11 +3,12 @@ let timerInterval;
 let timerDisplay = document.querySelector('.timer');
 
 function playSound() {
-  const audio = new Audio('../fluid.wav');
-  audio.play();
+  const audioElement = document.getElementById('myAudio');
+  audioElement.play();
 }
 
 function checkTimer() {
+  console.log(timerDisplay.innerHTML);
   if (timerDisplay.innerHTML === '00:00') {
     playSound();
     resetTimer();
@@ -15,7 +16,9 @@ function checkTimer() {
 }
 
 function resetTimer() {
-  timerDisplay.innerHTML = `${timerValue}:00`;
+  timerValue = document.getElementById('time-input').value;
+  console.log(timerValue);
+  startTimer();
 }
 
 function startTimer() {
