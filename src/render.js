@@ -22,9 +22,9 @@ function startTimer() {
   timerInterval = setInterval(function () {
     let minutes = Math.floor(timerValue / 60);
     let seconds = timerValue % 60;
-    minutes = minutes < 10 ? `0${minutes}` : minutes;
-    seconds = seconds < 10 ? `0${seconds}` : seconds;
-    timerDisplay.innerHTML = `${minutes}:${seconds}`;
+    timerDisplay.innerHTML = `${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`;
     timerValue--;
     checkTimer();
   }, 1000);
@@ -32,6 +32,7 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(timerInterval);
+  timerDisplay.innerHTML = `${timerValue}:00`;
 }
 
 document.getElementById('start').addEventListener('click', function () {
