@@ -3,8 +3,8 @@ let timerInterval;
 let timerDisplay = document.querySelector('.timer');
 
 function playSound() {
-  const audioElement = document.getElementById('myAudio');
-  audioElement.play();
+  let audio = new Audio('fluid.wav');
+  audio.play();
 }
 
 function checkTimer() {
